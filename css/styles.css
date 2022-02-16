@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(217deg, #C36A2D, #C85C5C 70.71%),
+                linear-gradient(127deg, #FDA65D, #FDA65D 70.71%),
+                linear-gradient(336deg, #FF8243, #E26A2C 70.71%);
+}
+.container
+{
+    position: relative;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    
+}
+.container .card
+{
+    width: 100%;
+    background: #fff;
+    border-radius: 15px;
+}
+.container .card .imgBx
+{
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+}
+.container .card .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    transform-origin: rigth;
+}
+.container .card:hover .imgBx img
+{
+    transform: scale(1.5);
+}
+
+.action
+{
+    position: absolute;
+    top: 10;
+    right: 10px;
+} 
+.action li
+{
+    position: relative;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform: translateX(60px);
+} 
+.action li:nth-child(2)
+{
+    transition-delay: 0.15s;
+}
+.action li:nth-child(3)
+{
+    transition-delay: 0.3s;
+}
+.container .card:hover .action li
+{
+    transform: translateX(0px);
+}
+.action li:hover
+{
+    background: #FDA65D;
+    color: #fff;
+}
+
+.action li span
+{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    white-space: nowrap;
+    padding: 4px 6px;
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+.action li:hover span
+{
+    transform: translateY(-50%) translateX(0px);
+    opacity: 1;
+}
+
+.action .card .content
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.container .card .content
+{
+    padding: 10px;
+}
+.container .card .content .productName h3
+{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 5px 0;
+}
+.container .card .content .price_rating
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .card .content .price_rating h2
+{
+    font-size: 20px;
+    columns: #C85C5C;
+    font-weight: 500;
+}
+.container .card .content .price_rating .fa
+{
+    color: #ffd513;
+    cursor: pointer;
+}
+.container .card .content .price_rating .fa.grey
+{
+    color: #ccc;
+}
+.contact
+{
+    position: fixed;
+    right: 6px;
+    top: 90%;
+    z-index: 20;
+}
+.contact .wpp
+{
+    float: right;
+    clear: right;
+    margin: 6px;
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+.contact .wpp:hover
+{   
+    transform: scale(1.5) rotate(1turn);
+    transition: all 0.7s ease-in-out;
+}
+
